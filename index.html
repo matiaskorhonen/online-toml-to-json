@@ -26,34 +26,36 @@
 </head>
 <body id="home">
   <div role="main" class="main">
-    <h1>Online TOML to JSON converter</h1>
+    <div id="wrapper">
+      <h1>Online TOML to JSON converter</h1>
 
-    <p>Convert <strong>TOML to JSON</strong> right here on this page (toml2json).</p>
+      <p>Convert <strong>TOML to JSON</strong> right here on this page (toml2json).</p>
 
-    <blockquote>
-      <a href="https://github.com/mojombo/toml">TOML</a> (Tom's Obvious,
-      Minimal Language) aims to be a minimal configuration file format that's
-      easy to read due to obvious semantics. TOML is designed to map
-      unambiguously to a hash table. TOML should be easy to parse into data
-      structures in a wide variety of languages.
-    </blockquote>
+      <blockquote>
+        <a href="https://github.com/mojombo/toml">TOML</a> (Tom's Obvious,
+        Minimal Language) aims to be a minimal configuration file format that's
+        easy to read due to obvious semantics. TOML is designed to map
+        unambiguously to a hash table. TOML should be easy to parse into data
+        structures in a wide variety of languages.
+      </blockquote>
 
-    <div id="converter">
-      <textarea id="input"></textarea>
-      <div class="center">
-        <button id="to_json">Convert TOML to JSON ⬇</button>
+      <div id="converter">
+        <textarea id="input"></textarea>
+        <div class="center">
+          <button id="to_json">Convert TOML to JSON ⬇</button>
+        </div>
+        <textarea class="expanding" id="output"></textarea>
+        <div class="clearfix"></div>
       </div>
-      <textarea class="expanding" id="output"></textarea>
       <div class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
 
-    <div id="footer">
-      <p class="light">
-        Copyright <span class="years">2013</span> <a href="http://matiaskorhonen.fi">Matias Korhonen</a>.<br>
-        <a href="https://github.com/mojombo/toml">TOML specification</a> by Tom Preston-Werner.<br>
-        <a href="https://github.com/ricardobeat/toml.js">toml.js</a> by Ricardo Tomasi.
-      </p>
+      <div id="footer">
+        <p class="light">
+          Copyright <span class="years">2013</span> <a href="http://matiaskorhonen.fi">Matias Korhonen</a>.<br>
+          <a href="https://github.com/mojombo/toml">TOML specification</a> by Tom Preston-Werner.<br>
+          <a href="https://github.com/ricardobeat/toml.js">toml.js</a> by Ricardo Tomasi.
+        </p>
+      </div>
     </div>
   </div>
 

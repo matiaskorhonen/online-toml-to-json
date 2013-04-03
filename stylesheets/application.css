@@ -119,6 +119,10 @@ a:hover {
   margin: 1em auto;
 }
 
+#wrapper {
+  margin: 0 1em;
+}
+
 /* Other stuff */
 
 h1:before {
