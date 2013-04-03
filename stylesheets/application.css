@@ -167,6 +167,6 @@ textarea, pre {
   color: #666;
 }
 
-.light:hover a {
+.light a:hover {
   color: #3465a4;
 }
