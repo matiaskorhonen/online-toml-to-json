@@ -126,7 +126,7 @@ a:hover {
 /* Other stuff */
 
 h1:before {
-  content: "⬇";
+  content: "↓";
 }
 
 blockquote {
@@ -144,6 +144,10 @@ textarea, pre {
 
 #input {
   min-height: 10em;
+}
+
+button:after {
+  content: "↓";
 }
 
 #output, #input {
