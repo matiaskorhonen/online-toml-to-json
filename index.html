@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <title>Online JSON to TOML converter</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700|Inconsolata:400,700">
+  <link rel="stylesheet" href="stylesheets/vendor/normalize.css">
+  <link rel="stylesheet" href="stylesheets/application.css">
+</head>
+<body id="home">
+  <div role="main" class="main">
+    <h1>Online TOML to JSON converter</h1>
+
+    <p>Convert <strong>TOML to JSON</strong> right here on this page.</p>
+
+    <blockquote>
+      <a href="https://github.com/mojombo/toml">TOML</a> (Tom's Obvious,
+      Minimal Language) aims to be a minimal configuration file format that's
+      easy to read due to obvious semantics. TOML is designed to map
+      unambiguously to a hash table. TOML should be easy to parse into data
+      structures in a wide variety of languages.
+    </blockquote>
+
+    <div id="converter">
+      <textarea id="input"></textarea>
+      <div class="center">
+        <button id="to_json">Convert TOML to JSON ⬇</button>
+      </div>
+      <textarea class="expanding" id="output"></textarea>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div id="footer">
+      <p class="light">
+        Copyright <span class="years">2013</span> <a href="http://matiaskorhonen.fi">Matias Korhonen</a>.<br>
+        <a href="https://github.com/mojombo/toml">TOML specification</a> by Tom Preston-Werner.<br>
+        <a href="https://github.com/ricardobeat/toml.js">toml.js</a> by Ricardo Tomasi.
+      </p>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="javascripts/vendor/jquery.min.js"><\/script>')
+  </script>
+  <script src="javascripts/vendor/html5shiv.js"></script>
+  <script src="javascripts/vendor/prefixfree.min.js"></script>
+  <script src="javascripts/vendor/toml.js"></script>
+  <script src="javascripts/vendor/expanding.js"></script>
+  <script src="javascripts/application.js"></script>
+  <!--<script src=""></script>-->
+  <script id="toml_sample" type="application/x-toml">
+# This is a TOML document. Boom.
+
+title = "TOML Example"
+
+[owner]
+name = "Tom Preston-Werner"
+organization = "GitHub"
+bio = "GitHub Cofounder & CEO\nLikes tater tots and beer."
+dob = 1979-05-27T07:32:00Z # First class dates? Why not?
+
+[database]
+server = "192.168.1.1"
+ports = [ 8001, 8001, 8002 ]
+connection_max = 5000
+enabled = true
+
+[servers]
+
+  # You can indent as you please. Tabs or spaces. TOML don't care.
+  [servers.alpha]
+  ip = "10.0.0.1"
+  dc = "eqdc10"
+
+  [servers.beta]
+  ip = "10.0.0.2"
+  dc = "eqdc10"
+
+[clients]
+data = [ ["gamma", "delta"], [1, 2] ]
+
+# Line breaks are OK when inside arrays
+hosts = [
+  "alpha",
+  "omega"
+]
+  </script>
+</body>
+</html>
