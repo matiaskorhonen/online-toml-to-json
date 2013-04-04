@@ -174,3 +174,29 @@ button:after {
 .light a:hover {
   color: #3465a4;
 }
+
+h1 .verbose { display: inline; }
+h1 .shorter { display: none; }
+h1 .short { display: none; }
+h1 .shortest { display: none; }
+
+@media screen and (max-width: 46em) {
+  h1 .verbose { display: none; }
+  h1 .shorter { display: inline; }
+  h1 .short { display: none; }
+  h1 .shortest { display: none; }
+}
+
+@media screen and (max-width: 40em) {
+  h1 .verbose { display: none; }
+  h1 .shorter { display: none; }
+  h1 .short { display: inline; }
+  h1 .shortest { display: none; }
+}
+
+@media screen and (max-width: 30em) {
+  h1 .verbose { display: none; }
+  h1 .shorter { display: none; }
+  h1 .short { display: none; }
+  h1 .shortest { display: inline; }
+}
