@@ -36,7 +36,7 @@
         <span class="shortest">toml2json</span>
       </h1>
 
-      <p>Convert <strong>TOML to JSON</strong> right here on this page (toml2json).</p>
+      <p>Convert <strong>TOML to JSON</strong> or <strong>JSON to TOMl</strong> right here on this page* (toml2json, json2toml).</p>
 
       <blockquote>
         <a href="https://github.com/mojombo/toml">TOML</a> (Tom's Obvious,
@@ -50,6 +50,7 @@
         <textarea id="input"></textarea>
         <div class="center">
           <button id="to_json">Convert TOML to JSON</button>
+          <button id="to_toml">Convert JSON to TOML</button>
         </div>
         <textarea class="expanding" id="output"></textarea>
         <div class="clearfix"></div>
@@ -58,10 +59,17 @@
 
       <div id="footer">
         <p class="light">
+          <small>
+            * The JSON to TOML conversion is done server-side for technical reasons,
+            however your requests are <em>not</em> saved on the server.
+          </small>
+        </p>
+        <p class="light">
           Copyright <span class="years">2013</span> <a href="http://matiaskorhonen.fi">Matias Korhonen</a>.
           <a href="https://github.com/k33l0r/online-toml-to-json">Source on GitHub</a>.<br>
           <a href="https://github.com/mojombo/toml">TOML specification</a> by Tom Preston-Werner.<br>
-          <a href="https://github.com/ricardobeat/toml.js">toml.js</a> by Ricardo Tomasi.
+          <a href="https://github.com/ricardobeat/toml.js">toml.js</a> by Ricardo Tomasi.<br>
+          <a href="https://github.com/emancu/toml-rb">toml-rb</a> by Emiliano Mancuso.
         </p>
       </div>
     </div>

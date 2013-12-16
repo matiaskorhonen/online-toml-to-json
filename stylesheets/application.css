@@ -146,8 +146,16 @@ textarea, pre {
   min-height: 10em;
 }
 
+#to_json {
+  margin: 0.5em;
+}
+
+#to_toml {
+  margin: 0.5em;
+}
+
 button:after {
-  content: "↓";
+  content: " ↓";
 }
 
 #output, #input {
