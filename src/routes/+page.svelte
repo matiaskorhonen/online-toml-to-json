@@ -10,7 +10,7 @@
 	const editorStyles = {
 		'&': {
 			width: '100%',
-			height: '40rem'
+			height: '100%'
 		},
 		'.cm-content': {
 			'font-family': `ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
@@ -37,6 +37,11 @@
 	const handleJsonChange = ({ detail }) => {
 		try {
 			const json = JSON.parse(detail);
+			if (Object.keys(json) == 0) {
+				throw new Error(
+					'Plain JSON objects cannot be represented in TOML (a root level object with keys is required)'
+				);
+			}
 			tomlValue = TOML.stringify(json, { newline: '\n', xNull: true }).trimStart();
 			jsonError = null;
 		} catch (err) {
@@ -44,18 +49,20 @@
 			console.error('JSON→TOML error', err);
 		}
 	};
+
+	handleTomlChange({ detail: tomlValue });
 </script>
 
-<header>
-	<h1>Online TOML to JSON converter</h1>
-	<p>
-		Convert TOML to JSON or JSON to TOML right here on this page (<code>toml2json</code> or
-		<code>json2toml</code>).
-	</p>
-</header>
+<section class="container">
+	<header class="item">
+		<h1>Online TOML to JSON converter</h1>
+		<p>
+			Convert TOML to JSON or JSON to TOML right here on this page (<code>toml2json</code> or
+			<code>json2toml</code>).
+		</p>
+	</header>
 
-<section>
-	<div>
+	<div class="item">
 		<h2>
 			TOML {#if tomlError !== null}<span title={tomlError.message}>❌</span>{/if}
 		</h2>
@@ -68,7 +75,7 @@
 		/>
 	</div>
 
-	<div>
+	<div class="item">
 		<h2>
 			JSON {#if jsonError !== null}<span title={jsonError.message}>❌</span>{/if}
 		</h2>
@@ -82,6 +89,10 @@
 </section>
 
 <style>
+	:global(html, body) {
+		height: 100%;
+		margin: 0;
+	}
 	:global(body) {
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Roboto',
 			'Noto Sans', 'Droid Sans', sans-serif;
@@ -91,12 +102,28 @@
 			Monaco, Consolas, monospace;
 	}
 
-	section {
-		display: flex;
-		flex-direction: row;
+	:global(.codemirror-wrapper) {
+		flex-grow: 1;
 	}
 
-	section div {
-		width: 50%;
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 100%;
+	}
+
+	.item {
+		height: calc(100% - 140px);
+		width: 48%;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item:nth-child(3n-2) {
+		height: 120px;
+		width: 100%;
+		flex: 0 1 auto;
 	}
 </style>
