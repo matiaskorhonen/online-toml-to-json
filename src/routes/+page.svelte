@@ -11,6 +11,10 @@
 		'&': {
 			width: '100%',
 			height: '40rem'
+		},
+		'.cm-content': {
+			'font-family': `ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
+			Monaco, Consolas, monospace`
 		}
 	};
 
@@ -78,6 +82,15 @@
 </section>
 
 <style>
+	:global(body) {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Roboto',
+			'Noto Sans', 'Droid Sans', sans-serif;
+	}
+	:global(code) {
+		font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
+			Monaco, Consolas, monospace;
+	}
+
 	section {
 		display: flex;
 		flex-direction: row;
