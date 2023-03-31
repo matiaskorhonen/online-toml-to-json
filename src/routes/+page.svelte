@@ -9,8 +9,10 @@
 
 	const editorStyles = {
 		'&': {
+			display: 'flex',
 			width: '100%',
-			height: '100%'
+			height: '100%',
+			'flex-grow': 1
 		},
 		'.cm-content': {
 			'font-family': `ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
@@ -53,7 +55,7 @@
 	handleTomlChange({ detail: tomlValue });
 </script>
 
-<section class="container">
+<main class="container">
 	<header class="item">
 		<h1>Online TOML to JSON converter</h1>
 		<p>
@@ -62,41 +64,42 @@
 		</p>
 	</header>
 
-	<div class="item">
-		<h2>
-			TOML {#if tomlError !== null}<span title={tomlError.message}>❌</span>{/if}
-		</h2>
-		<CodeMirror
-			bind:value={tomlValue}
-			on:change={handleTomlChange}
-			lang={json()}
-			extensions={[StreamLanguage.define(toml)]}
-			styles={editorStyles}
-		/>
-	</div>
+	<section class="editors">
+		<div class="editor">
+			<h2>
+				TOML {#if tomlError !== null}<span title={tomlError.message}>❌</span>{/if}
+			</h2>
+			<CodeMirror
+				bind:value={tomlValue}
+				on:change={handleTomlChange}
+				lang={json()}
+				extensions={[StreamLanguage.define(toml)]}
+				styles={editorStyles}
+			/>
+		</div>
 
-	<div class="item">
-		<h2>
-			JSON {#if jsonError !== null}<span title={jsonError.message}>❌</span>{/if}
-		</h2>
-		<CodeMirror
-			bind:value={jsonValue}
-			on:change={handleJsonChange}
-			lang={json()}
-			styles={editorStyles}
-		/>
-	</div>
-</section>
+		<div class="editor">
+			<h2>
+				JSON {#if jsonError !== null}<span title={jsonError.message}>❌</span>{/if}
+			</h2>
+			<CodeMirror
+				bind:value={jsonValue}
+				on:change={handleJsonChange}
+				lang={json()}
+				styles={editorStyles}
+			/>
+		</div>
+	</section>
+</main>
 
 <style>
 	:global(html, body) {
 		height: 100%;
 		margin: 0;
-	}
-	:global(body) {
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Roboto',
 			'Noto Sans', 'Droid Sans', sans-serif;
 	}
+
 	:global(code) {
 		font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
 			Monaco, Consolas, monospace;
@@ -108,17 +111,21 @@
 
 	.container {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		flex-direction: column;
 		height: 100%;
 	}
 
-	.item {
-		height: calc(100% - 140px);
-		width: 48%;
-		flex: 1 1 auto;
+	.editors {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+	}
+
+	.editor {
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
+		max-width: 50%;
 	}
 
 	.item:nth-child(3n-2) {
