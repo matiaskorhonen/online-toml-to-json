@@ -64,7 +64,8 @@
 		<h1>Online TOML to JSON converter</h1>
 		<p>
 			Convert TOML to JSON or JSON to TOML right here on this page (<code>toml2json</code> or
-			<code>json2toml</code>).
+			<code>json2toml</code>). The source code is on
+			<a href="https://github.com/matiaskorhonen/online-toml-to-json">GitHub</a>.
 		</p>
 	</header>
 
