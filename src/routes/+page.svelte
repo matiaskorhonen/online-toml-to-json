@@ -27,7 +27,7 @@
 
 	const handleTomlChange = ({ detail }) => {
 		try {
-			const toml = TOML.parse(detail, { bigint: false });
+			const toml = TOML.parse(detail, { bigint: false, joiner: '\n' });
 			jsonValue = JSON.stringify(toml, null, '  ');
 			tomlError = null;
 		} catch (err) {
