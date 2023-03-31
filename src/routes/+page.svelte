@@ -55,6 +55,10 @@
 	handleTomlChange({ detail: tomlValue });
 </script>
 
+<svelte:head>
+	<title>Online TOML to JSON converter</title>
+</svelte:head>
+
 <main class="container">
 	<header class="item">
 		<h1>Online TOML to JSON converter</h1>
@@ -132,8 +136,21 @@
 		max-width: 50%;
 	}
 
+	@media (max-width: 40em) {
+		.editors {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+		}
+
+		.editor {
+			max-width: 100%;
+		}
+	}
+
 	.editor h2 {
-		margin-left: 2.5rem;
+		padding-top: 1rem;
+		padding-left: 2.5rem;
 	}
 
 	.item:nth-child(3n-2) {
