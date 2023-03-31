@@ -115,6 +115,10 @@
 		height: 100%;
 	}
 
+	header {
+		margin: 1rem;
+	}
+
 	.editors {
 		display: flex;
 		flex-direction: row;
@@ -126,6 +130,10 @@
 		flex-direction: column;
 		flex-grow: 1;
 		max-width: 50%;
+	}
+
+	.editor h2 {
+		margin-left: 2.5rem;
 	}
 
 	.item:nth-child(3n-2) {
