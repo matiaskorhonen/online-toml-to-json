@@ -60,7 +60,7 @@
 </svelte:head>
 
 <main class="container">
-	<header class="item">
+	<header>
 		<h1>Online TOML to JSON converter</h1>
 		<p>
 			Convert TOML to JSON or JSON to TOML right here on this page (<code>toml2json</code> or
@@ -121,7 +121,10 @@
 	}
 
 	header {
-		margin: 1rem;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		margin: 0 2.5rem;
 	}
 
 	.editors {
@@ -150,13 +153,6 @@
 	}
 
 	.editor h2 {
-		padding-top: 1rem;
 		padding-left: 2.5rem;
-	}
-
-	.item:nth-child(3n-2) {
-		height: 120px;
-		width: 100%;
-		flex: 0 1 auto;
 	}
 </style>
