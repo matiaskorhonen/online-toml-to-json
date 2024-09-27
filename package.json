@@ -25,8 +25,8 @@
 	"type": "module",
 	"dependencies": {
 		"@codemirror/lang-json": "^6.0.1",
-		"@codemirror/language": "^6.6.0",
-		"@codemirror/legacy-modes": "^6.3.2",
+		"@codemirror/language": "^6.10.3",
+		"@codemirror/legacy-modes": "^6.4.1",
 		"@ltd/j-toml": "^1.38.0",
 		"svelte-codemirror-editor": "^1.4.1"
 	}
