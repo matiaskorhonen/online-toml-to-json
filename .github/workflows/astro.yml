@@ -36,7 +36,6 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
           cache: 'npm'
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Setup Pages
