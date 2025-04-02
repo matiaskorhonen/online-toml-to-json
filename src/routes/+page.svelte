@@ -20,10 +20,10 @@
 		}
 	};
 
-	let tomlValue = sampleTOML;
-	let tomlError = null;
-	let jsonValue = '';
-	let jsonError = null;
+	let tomlValue = $state(sampleTOML);
+	let tomlError = $state(null);
+	let jsonValue = $state('');
+	let jsonError = $state(null);
 
 	const handleTomlChange = ({ detail }) => {
 		try {
@@ -52,7 +52,9 @@
 		}
 	};
 
-	handleTomlChange({ detail: tomlValue });
+	(function () {
+		handleTomlChange({ detail: tomlValue });
+	})();
 </script>
 
 <svelte:head>
@@ -101,8 +103,16 @@
 	:global(html, body) {
 		height: 100%;
 		margin: 0;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Roboto',
-			'Noto Sans', 'Droid Sans', sans-serif;
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			'Ubuntu',
+			'Roboto',
+			'Noto Sans',
+			'Droid Sans',
+			sans-serif;
 	}
 
 	:global(code) {
