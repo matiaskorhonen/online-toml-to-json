@@ -116,8 +116,9 @@
 	}
 
 	:global(code) {
-		font-family: ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo,
-			Monaco, Consolas, monospace;
+		font-family:
+			ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', 'Ubuntu Mono', 'Roboto Mono', Menlo, Monaco,
+			Consolas, monospace;
 	}
 
 	:global(.codemirror-wrapper) {
